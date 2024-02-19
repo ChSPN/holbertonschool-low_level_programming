@@ -9,8 +9,6 @@
  */
 int main(void)
 {
-        char Mystr[] = "with proper grammar, but the outcome is a piece of art,";
-
-        printf(Mystr);
-        return (0);
+	printf("with proper grammar, but the outcome is a piece of art,");
+	return (0);
 }
