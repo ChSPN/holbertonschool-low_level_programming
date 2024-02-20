@@ -19,6 +19,7 @@ int main(void)
 		if (index > 0)
 		{
 			putchar(',');
+			putchar(' ');
 		}
 
 		putchar(digit[index]);
