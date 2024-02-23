@@ -7,14 +7,14 @@
  * Return: On success 1.
  * On error, 0 is returned, and errno is set appropriately.
  */
-int_abs(int n);
+int _abs(int n)
 {
 	if (n < 0)
 	{
-		n = n * -1
+		n = n * -1;
 		return (n);
 	}
-	else if (n > 0)
+	else
 	{
 		return (n);
 	}
