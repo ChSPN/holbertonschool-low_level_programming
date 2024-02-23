@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * computes the absolute value of an integer - short description
- * @c: The character to test
+ * _abs - short description nombre absolu
+ * @n: The character to test
  *
  * Return: On success 1.
  * On error, 0 is returned, and errno is set appropriately.
