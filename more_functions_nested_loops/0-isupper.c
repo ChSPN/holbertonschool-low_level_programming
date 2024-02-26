@@ -1,24 +1,47 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code.
+ * _isupper - check the character c upper to stdout
+ * @c: The character to test
  *
- * Return: Always 0.
+ * Return: On success 1.
+ * On error, 0 is returned, and errno is set appropriately.
  */
-int _isupper(int c);
-
+int _isupper(int c)
 {
+	char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int i;
 
-	int c = alphabet
-		if (isupper(c))
-		cout << c << "1 \n";
+	for (i = 0; i < 26; i++)
+	{
+		if (alphabet[i] == c)
 		{
 			return (1);
 		}
-	else
-	{
-		return (0);
 	}
+
+	return (0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
