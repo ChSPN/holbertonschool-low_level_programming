@@ -7,8 +7,7 @@
  * Return: On success 1.
  * On error, 0 is returned, and errno is set appropriately.
  */
-int _isdigit(int c);
-
+int _isdigit(int c)
 {
 
 	char digit[] = "0123456789";
