@@ -9,13 +9,20 @@
  */
 void print_rev(char *s)
 {
-if (*s > '\0')
-{
-	print_rev(s + 1);
-	_putchar(*s);
-}
-else
-{
-	_putchar ('\n');
-}
+	int count = 0;
+	int i;
+
+	while (*s != '\0')
+	{
+		count++;
+		s++;
+	}
+
+	for (i = 0; i < count; i++)
+	{
+		s--;
+		_putchar(*s);
+	}
+
+	_putchar('\n');
 }
