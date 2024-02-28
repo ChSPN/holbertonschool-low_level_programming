@@ -4,7 +4,7 @@
 /**
  * _puts - function that prints a string, followed by a new line.
  * Description: function that prints a string, followed by a new line.
- * @s: chaine de caracteres
+ * @str: chaine de caracteres
  * Return: length of s
  */
 void _puts(char *str)
