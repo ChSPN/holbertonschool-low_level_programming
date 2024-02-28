@@ -11,12 +11,21 @@
  */
 void rev_string(char *s)
 {
-if (*s > '\0')
+int i, j;
+int temp;
+int count_letters;
+
+for (i = 0; s[i] != '\0'; i++)
 {
-	rev_string(s + 1);
+	count_letters++;
 }
-else
+count_letters--;
+
+for (i = count_letters - 1; i >= count_letters / 2; i--)
 {
-	_putchar('\n');
+	temp = s[i];
+	s[i] = s[j];
+	s[j] = temp;
+	j++;
 }
 }
