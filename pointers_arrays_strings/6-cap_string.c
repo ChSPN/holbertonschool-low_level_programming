@@ -14,7 +14,7 @@ char *cap_string(char *s)
 
 	while (*s != '\0')
 	{
-		if (length == 0 
+		if (length == 0
 			|| previous == ' '
 			|| previous == '\t'
 			|| previous == '\n'
