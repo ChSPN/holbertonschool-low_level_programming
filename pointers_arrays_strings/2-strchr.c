@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * _strchr - Search character in pointer.
@@ -9,10 +10,7 @@
  */
 char *_strchr(char *s, char c)
 {
-	char r;
-	char *p;
-
-	p = &r;
+	char *p = NULL;
 
 	while (*s != '\0')
 	{
