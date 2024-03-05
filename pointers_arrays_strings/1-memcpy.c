@@ -11,6 +11,7 @@ char *_memcpy(char *s, char *b, unsigned int n)
 
 	for (i = 0; i < n; i++)
 	{
+		/* Affectation de l'indexe i de s avec la valeur de l'indexe i de b. */
 		s[i] = b[i];
 	}
 
