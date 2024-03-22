@@ -1,5 +1,18 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdarg.h>
+
+/**
+ * ft - struct
+ * Description: ft
+ * @format: The format
+ * @print: The function print
+ */
+typedef struct ft
+{
+	char *format;
+	void (*print)(va_list args);
+} ft;
 
 int sum_them_all(const unsigned int n, ...);
 
