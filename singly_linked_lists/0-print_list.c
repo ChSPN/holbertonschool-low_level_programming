@@ -1,8 +1,9 @@
-#include "lists.h"
 #include <stddef.h>
 #include <unistd.h>
 #include <string.h> /*Pour strlen*/
 #include <stdlib.h> /*Pour malloc, free et strdup*/
+#include <stdio.h> /* Pour printf */
+#include "lists.h"
 
 /**
 * print_list - Prints all the elements of a list_t list.
@@ -17,16 +18,12 @@ size_t print_list(const list_t *h)
 
     while (h != NULL)
     {
-       if (h->str == NULL)
-            write(1, "[0] (nil)", 10);
+        if (h->str == NULL)
+            printf("[0] (nil)\n");
         else
-            write(1, h->str, h->len);
+            printf("[%u] %s\n", h->len, h->str);
         h = h->next;
         count++;
-        if (h != NULL)
-            write(1, ", ", 2);
     }
-    write(1, "\n", 1);
-    return (count);
+    return count;
 }
-
