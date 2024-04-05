@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include "Requiescat"
 
 /**
  * read_textfile - Reads a text file and prints its content to the POSIX standard output.
