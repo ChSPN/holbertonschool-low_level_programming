@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int est_palindrome(int num) {
+    int temp = num, reverse = 0;
+    while (temp != 0) {
+        reverse = reverse * 10 + temp % 10;
+        temp /= 10;
+    }
+    return num == reverse;
+}
+
+int main(void) 
+{
+    int i, j, produit, plus_grand_palindrome = 0;
+
+    for (i = 100; i < 1000; i++) {
+        for (j = i; j < 1000; j++) {
+            produit = i * j;
+            if (est_palindrome(produit) && produit > plus_grand_palindrome) {
+                plus_grand_palindrome = produit;
+            }
+        }
+    }
+
+    FILE *fichier = fopen("102-result", "w");
+    fprintf(fichier, "%d", plus_grand_palindrome);
+    fclose(fichier);
+
+    return 0;
+}
