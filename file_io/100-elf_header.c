@@ -10,32 +10,40 @@
  */
 void print_elf_header(Elf64_Ehdr *header)
 {
+    int i;
+    const char *osabi;
+
     printf("ELF Header:\n");
     printf("  Magic:   ");
-    for (int i = 0; i < EI_NIDENT; i++)
-        printf("%02x%c", header->e_ident[i], i == EI_NIDENT - 1 ? '\n' : ' ');
+    for (i = 0; i < EI_NIDENT; i++) {
+        printf("%02x", header->e_ident[i]);
+        if (i == EI_NIDENT - 1)
+            printf("\n");
+        else
+            printf(" ");
+    }
     printf("  Class:                             %s\n",
-           header->e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
+            header->e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
     printf("  Data:                              %s's complement, %s endian\n",
-           header->e_ident[EI_DATA] == ELFDATA2LSB ? "little" : "big",
-           header->e_ident[EI_DATA] == ELFDATA2LSB ? "little" : "big");
-    printf("  Version:                           %d (current)\n", header->e_ident[EI_VERSION]);
-    const char *osabi = (header->e_ident[EI_OSABI] == ELFOSABI_NONE) ? "UNIX - System V" : "<unknown>";
+            header->e_ident[EI_DATA] == ELFDATA2LSB ? "little" : "big",
+            header->e_ident[EI_DATA] == ELFDATA2LSB ? "little" : "big");
+    printf("  Version:              %d (current)\n", header->e_ident[EI_VERSION]);
+    osabi = (header->e_ident[EI_OSABI] == ELFOSABI_NONE) ? "UNIX - System V" : "<unknown>";
     printf(" OS/ABI: %s\n", osabi);
-    printf("  ABI Version:                       %d\n", header->e_ident[EI_ABIVERSION]);
+    printf("  ABI Version:               %d\n", header->e_ident[EI_ABIVERSION]);
     printf("  Type:                              %s (%s file)\n",
-           header->e_type == ET_NONE ? "NONE (Unknown)" :
-           header->e_type == ET_REL ? "REL (Relocatable file)" :
-           header->e_type == ET_EXEC ? "EXEC (Executable file)" :
-           header->e_type == ET_DYN ? "DYN (Shared object file)" :
-           header->e_type == ET_CORE ? "CORE (Core file)" :
-           "<unknown>",
-           header->e_type == ET_NONE ? "None" :
-           header->e_type == ET_REL ? "Relocatable" :
-           header->e_type == ET_EXEC ? "Executable" :
-           header->e_type == ET_DYN ? "Shared object" :
-           header->e_type == ET_CORE ? "Core" :
-           "<unknown>");
+            header->e_type == ET_NONE ? "NONE (Unknown)" :
+            header->e_type == ET_REL ? "REL (Relocatable file)" :
+            header->e_type == ET_EXEC ? "EXEC (Executable file)" :
+            header->e_type == ET_DYN ? "DYN (Shared object file)" :
+            header->e_type == ET_CORE ? "CORE (Core file)" :
+            "<unknown>",
+            header->e_type == ET_NONE ? "None" :
+            header->e_type == ET_REL ? "Relocatable" :
+            header->e_type == ET_EXEC ? "Executable" :
+            header->e_type == ET_DYN ? "Shared object" :
+            header->e_type == ET_CORE ? "Core" :
+            "<unknown>");
     printf("  Entry point address:               %#lx\n", header->e_entry);
 }
 
